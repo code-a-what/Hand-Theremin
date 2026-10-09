@@ -10,7 +10,7 @@ Play music with your bare hands and a webcam. The program tracks your hands with
 - Anuva Rathi (F014)
 
 ## Features
-- Six instruments: piano, guitar, violin, flute, saxophone, drums
+- Five instruments: piano, guitar, flute, saxophone, drums
 - Pitch snapped to a musical scale, so rough hand movement still sounds good
 - Floating music-note visuals (colour follows pitch, warm burst on a drum hit)
 - Runs fully on your own laptop. No internet or GPU needed after setup.
