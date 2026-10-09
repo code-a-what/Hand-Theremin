@@ -1,6 +1,6 @@
-"""
+﻿"""
 main.py
-Hand-Controlled Theremin — Image/Video Processing course project.
+Hand-Controlled Theremin â€” Image/Video Processing course project.
 
 Right hand height  -> pitch (quantized to a musical scale)
 Right hand pinch    -> volume (thumb-index distance, wide = loud)
@@ -11,7 +11,7 @@ Left hand closes into a fist -> triggers a drum hit (percussive, one-shot,
 
 Colourful musical notes float up from your fingertip whenever a note is
 actually sounding (coloured by pitch), and a warm-coloured burst pops from
-your fist on every drum hit — purely visual flair via note_particles.py,
+your fist on every drum hit â€” purely visual flair via note_particles.py,
 no effect on the audio.
 
 Keys:
@@ -140,7 +140,7 @@ def main():
             audio.set_target(freq, 0.0 if muted else volume01)
 
             # Spawn floating musical notes from the playing fingertip while a
-            # note is actually audible (unmuted and loud enough to hear) —
+            # note is actually audible (unmuted and loud enough to hear) â€”
             # tying this to the same threshold the audio engine uses to gate
             # a note "on" keeps the visual honest: notes only appear when
             # you'd actually hear something.
@@ -177,8 +177,8 @@ def main():
             notes.draw(frame)
 
             draw_pitch_bar(frame, value01, freq)
-            is_fallback = (audio.instrument == "drum" and not audio.drum_is_real()) \
-                or (audio.instrument != "drum" and audio.current_instrument_is_fallback())
+            is_fallback = (audio.instrument == "drum" and not getattr(audio, "drum_is_real", lambda: True)()) \
+                or (audio.instrument != "drum" and getattr(audio, "current_instrument_is_fallback", lambda: False)())
             draw_hud(frame, audio.instrument, is_fallback,
                      scale_mapper.scale_name, volume01, muted, drum_flash)
 
